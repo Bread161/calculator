@@ -1,0 +1,64 @@
+# Функция для сложения двух чисел
+def add(x, y):
+    return x + y
+
+# Функция для вычитания двух чисел
+def subtract(x, y):
+    return x - y
+
+# Функция для умножения двух чисел
+def multiply(x, y):
+    return x * y
+
+# Функция для деления двух чисел
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Деление на ноль невозможно!"
+
+# Функция для возведения числа в степень
+def power(x, y):
+    return x ** y
+
+# Функция для нахождения квадратного корня числа
+def square_root(x):
+    if x >= 0:
+        return x ** 0.5
+    else:
+        return "Корень из отрицательного числа не существует!"
+
+# Выводим сообщение с возможными методами исчисления
+print("Выберите метод исчисления:")
+print("1. Сложение")
+print("2. Вычитание")
+print("3. Умножение")
+print("4. Деление")
+print("5. Возведение в степень")
+print("6. Квадратный корень")
+
+# Запрашиваем у пользователя метод исчисления
+choice = input("Введите соответствующую цифру: ")
+
+# Проверяем выбор пользователя и выполняем соответствующую операцию
+if choice in ['1', '2', '3', '4']:
+    num1 = float(input("Введите первое число: "))
+    num2 = float(input("Введите второе число: "))
+
+    if choice == '1':
+        print(num1, "+", num2, "=", add(num1, num2))
+    elif choice == '2':
+        print(num1, "-", num2, "=", subtract(num1, num2))
+    elif choice == '3':
+        print(num1, "*", num2, "=", multiply(num1, num2))
+    elif choice == '4':
+        print(num1, "/", num2, "=", divide(num1, num2))
+elif choice == '5':
+    num = float(input("Введите число: "))
+    power_num = float(input("Введите степень: "))
+    print(num, "в степени", power_num, "=", power(num, power_num))
+elif choice == '6':
+    num = float(input("Введите число: "))
+    print("Квадратный корень из", num, "=", square_root(num))
+else:
+    print("Некорректный ввод.")
